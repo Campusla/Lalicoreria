@@ -1,0 +1,791 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>La Licorería Duitama | Experiencia Premium</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&family=Special+Elite&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --wood:#1b120e;
+    --gold:#c49a45;
+    --red:#8b2318;
+    --cream:#fdf7ef;
+    --dark:#0e0907;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--wood);
+    color:white;
+    font-family:'Special Elite', cursive;
+    overflow-x:hidden;
+    background-image:url('https://www.transparenttextures.com/patterns/dark-wood.png');
+}
+
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:999;
+    background:rgba(0,0,0,.7);
+    backdrop-filter:blur(8px);
+    border-bottom:2px solid var(--gold);
+}
+
+.nav-container{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+}
+
+.logo{
+    font-family:'Permanent Marker';
+    font-size:2rem;
+    color:var(--cream);
+    text-shadow:3px 3px var(--red);
+}
+
+.nav-links{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-family:'Bebas Neue';
+    font-size:1.3rem;
+    letter-spacing:2px;
+    padding:10px 15px;
+    border:2px solid transparent;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    border-color:var(--gold);
+    background:var(--red);
+}
+
+/* ============================= */
+/* HERO */
+/* ============================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 80px;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.8)),
+    url('foto-licoreria-duitama.jpg');
+    background-size:cover;
+    background-position:center;
+    transform:scale(1.05);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:1100px;
+}
+
+.hero-tag{
+    display:inline-block;
+    background:var(--red);
+    border:2px solid var(--gold);
+    padding:12px 25px;
+    margin-bottom:25px;
+    font-family:'Bebas Neue';
+    font-size:1.4rem;
+    letter-spacing:3px;
+}
+
+.hero h1{
+    font-family:'Permanent Marker';
+    font-size:clamp(4rem,10vw,8rem);
+    line-height:1;
+    text-shadow:
+    4px 4px 0 var(--red),
+    8px 8px 30px rgba(0,0,0,.8);
+}
+
+.hero p{
+    margin-top:30px;
+    font-size:1.3rem;
+    line-height:1.8;
+    color:#f2e6d6;
+}
+
+.hero-buttons{
+    margin-top:45px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.hero-buttons a{
+    text-decoration:none;
+    padding:18px 35px;
+    border-radius:6px;
+    font-family:'Bebas Neue';
+    letter-spacing:2px;
+    font-size:1.2rem;
+    transition:.3s;
+}
+
+.btn-main{
+    background:var(--red);
+    color:white;
+    border:2px solid var(--gold);
+}
+
+.btn-main:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.btn-whatsapp{
+    background:#25D366;
+    color:white;
+    border:2px solid white;
+}
+
+.btn-whatsapp:hover{
+    transform:translateY(-4px);
+}
+
+/* ============================= */
+/* FRASE */
+/* ============================= */
+
+.frase{
+    padding:80px 20px;
+    text-align:center;
+    background:#120b08;
+    border-top:3px solid var(--gold);
+    border-bottom:3px solid var(--gold);
+}
+
+.frase h2{
+    font-family:'Rock Salt';
+    font-size:clamp(1.5rem,4vw,3rem);
+    color:var(--gold);
+    line-height:1.6;
+}
+
+/* ============================= */
+/* EVENTOS */
+/* ============================= */
+
+.eventos{
+    padding:100px 30px;
+    background:
+    linear-gradient(rgba(91,9,9,.7),rgba(24,4,4,.9)),
+    url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-family:'Permanent Marker';
+    font-size:4rem;
+    color:white;
+    text-shadow:4px 4px var(--red);
+}
+
+.section-title p{
+    margin-top:15px;
+    color:#f3dcc3;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+    max-width:1400px;
+    margin:auto;
+}
+
+.card{
+    background:#20120d;
+    border:3px solid var(--gold);
+    overflow:hidden;
+    transition:.4s;
+    transform:rotate(-1deg);
+    box-shadow:0 15px 35px rgba(0,0,0,.5);
+}
+
+.card:nth-child(even){
+    transform:rotate(1deg);
+}
+
+.card:hover{
+    transform:scale(1.03);
+}
+
+.card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+    text-align:center;
+}
+
+.card-content h3{
+    font-family:'Bebas Neue';
+    font-size:2rem;
+    margin-bottom:10px;
+    color:var(--gold);
+}
+
+.card-content p{
+    line-height:1.7;
+}
+
+/* ============================= */
+/* EXPERIENCIA */
+/* ============================= */
+
+.experiencia{
+    padding:120px 30px;
+    background:#0d0705;
+}
+
+.experience-grid{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+}
+
+.exp-box{
+    border:2px dashed rgba(196,154,69,.5);
+    padding:50px 35px;
+    background:rgba(255,255,255,.03);
+    transition:.3s;
+}
+
+.exp-box:hover{
+    background:rgba(255,255,255,.06);
+    transform:translateY(-5px);
+}
+
+.exp-box h3{
+    font-family:'Permanent Marker';
+    font-size:2rem;
+    margin-bottom:20px;
+    color:var(--gold);
+}
+
+.exp-box p{
+    line-height:1.9;
+    color:#e7d9c8;
+}
+
+/* ============================= */
+/* GALERIA */
+/* ============================= */
+
+.galeria{
+    padding:100px 20px;
+    background:#180d09;
+}
+
+.galeria-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+    max-width:1400px;
+    margin:auto;
+}
+
+.galeria-grid img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border:3px solid var(--gold);
+    transition:.4s;
+}
+
+.galeria-grid img:hover{
+    transform:scale(1.03);
+}
+
+/* ============================= */
+/* RESERVAS */
+/* ============================= */
+
+.reservas{
+    padding:100px 20px;
+    background:
+    linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9)),
+    url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1974&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+}
+
+.form-box{
+    max-width:900px;
+    margin:auto;
+    background:rgba(0,0,0,.75);
+    border:3px solid var(--gold);
+    padding:50px;
+}
+
+.form-box h2{
+    text-align:center;
+    font-family:'Permanent Marker';
+    font-size:3rem;
+    margin-bottom:40px;
+}
+
+form{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+input,
+select{
+    padding:15px;
+    background:#1d110d;
+    border:2px solid var(--gold);
+    color:white;
+    font-family:'Special Elite';
+}
+
+button{
+    padding:18px;
+    border:none;
+    background:var(--red);
+    color:white;
+    cursor:pointer;
+    font-family:'Bebas Neue';
+    font-size:1.2rem;
+    letter-spacing:2px;
+    border:2px solid var(--gold);
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer{
+    background:black;
+    padding:70px 20px;
+    border-top:4px solid var(--gold);
+}
+
+.footer-grid{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+
+footer h3{
+    font-family:'Permanent Marker';
+    color:var(--gold);
+    margin-bottom:20px;
+    font-size:1.8rem;
+}
+
+footer p,
+footer li{
+    color:#ddd;
+    line-height:1.8;
+}
+
+footer ul{
+    list-style:none;
+}
+
+.copy{
+    text-align:center;
+    margin-top:50px;
+    padding-top:25px;
+    border-top:1px solid #333;
+    color:#777;
+}
+
+/* ============================= */
+/* WHATSAPP FLOAT */
+/* ============================= */
+
+.whatsapp-float{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:70px;
+    height:70px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2rem;
+    color:white;
+    text-decoration:none;
+    z-index:999;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:4rem;
+    }
+
+    .section-title h2{
+        font-size:2.5rem;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">LA LICORERÍA</div>
+
+        <div class="nav-links">
+            <a href="#">INICIO</a>
+            <a href="#eventos">EVENTOS</a>
+            <a href="#experiencia">EXPERIENCIAS</a>
+            <a href="#reservas">RESERVAS</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-tag">
+            🍻 SEDE OFICIAL MUNDIAL 2026 • DUITAMA
+        </div>
+
+        <h1>LA LICORERÍA</h1>
+
+        <p>
+            Música, luces, experiencias premium y noches inolvidables.
+            Inspirado en la magia artesanal latina y el caos elegante de las grandes casas de rumba.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a class="btn-main" href="#reservas">
+                HACER RESERVA
+            </a>
+
+            <a class="btn-whatsapp"
+            href="https://wa.me/573105832128?text=Hola%20quiero%20hacer%20una%20reserva">
+                PEDIR POR WHATSAPP
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FRASE -->
+
+<section class="frase">
+    <h2>
+        “NO VENIMOS A TOMAR. VENIMOS A CREAR HISTORIAS.”
+    </h2>
+</section>
+
+<!-- EVENTOS -->
+
+<section class="eventos" id="eventos">
+
+    <div class="section-title">
+        <h2>EVENTOS & EXPERIENCIAS</h2>
+        <p>Rumba • Música en vivo • Mundial 2026 • DJs • Noches temáticas</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1974&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>VIERNES EN VIVO</h3>
+                <p>
+                    Bandas, DJ sets y ambiente premium hasta las 3 AM.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>MUNDIAL 2026</h3>
+                <p>
+                    Pantallas gigantes, promociones y ambiente futbolero.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?q=80&w=1974&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>NOCHES PREMIUM</h3>
+                <p>
+                    Cocktails, whisky, tequila y experiencias exclusivas.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section style="
+height: 90vh;
+background:
+linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.7)),
+url('foto-experiencia.jpg');
+background-size: cover;
+background-position: center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+">
+
+<div>
+
+<h2 style="
+font-family:'Permanent Marker';
+font-size:6vw;
+color:white;
+text-shadow:4px 4px #8b2318;
+margin-bottom:20px;
+">
+DONDE DUITAMA<br>COBRA VIDA
+</h2>
+
+<p style="
+font-size:1.3rem;
+color:#f5e6d3;
+max-width:800px;
+line-height:1.8;
+">
+Música, luces, cocktails, fútbol y noches inolvidables.
+</p>
+
+</div>
+
+</section>
+
+<!-- EXPERIENCIA -->
+
+<section class="experiencia" id="experiencia">
+
+
+    <div class="section-title">
+        <h2>LA EXPERIENCIA</h2>
+    </div>
+
+    <div class="experience-grid">
+
+        <div class="exp-box">
+            <h3>🍸 RESERVAS VIP</h3>
+
+            <p>
+                Celebra cumpleaños, despedidas, reuniones empresariales y noches inolvidables.
+            </p>
+        </div>
+
+        <div class="exp-box">
+            <h3>🔥 AMBIENTE ÚNICO</h3>
+
+            <p>
+                Inspirado en las grandes casas latinas de rumba con estética artesanal y premium.
+            </p>
+        </div>
+
+        <div class="exp-box">
+            <h3>⚽ COPA MUNDIAL 2026</h3>
+
+            <p>
+                Vive cada partido con sonido envolvente y pantallas gigantes.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GALERIA -->
+
+<section class="galeria">
+
+    <div class="section-title">
+        <h2>GALERÍA</h2>
+    </div>
+
+    <div class="galeria-grid">
+
+        <img src="https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?q=80&w=1974&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1974&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1974&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1974&auto=format&fit=crop">
+
+    </div>
+
+</section>
+
+<!-- RESERVAS -->
+
+<section class="reservas" id="reservas">
+
+    <div class="form-box">
+
+        <h2>RESERVACIONES</h2>
+
+        <form>
+
+            <input type="text" placeholder="Nombre Completo">
+
+            <input type="email" placeholder="Correo Electrónico">
+
+            <input type="tel" placeholder="Teléfono">
+
+            <select>
+                <option>Reserva estándar</option>
+                <option>Cumpleaños</option>
+                <option>Evento empresarial</option>
+                <option>Despedida</option>
+            </select>
+
+            <button type="submit">
+                HACER RESERVA
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>LA LICORERÍA</h3>
+
+            <p>
+                Un lugar único para personas únicas.
+                Experiencias premium en Duitama.
+            </p>
+        </div>
+
+        <div>
+            <h3>HORARIOS</h3>
+
+            <p>
+                Lunes a Domingo<br>
+                9:00 AM — 3:00 AM
+            </p>
+        </div>
+
+        <div>
+            <h3>CONTACTO</h3>
+
+            <p>
+                📍 Duitama, Boyacá<br>
+                📞 310 583 2128<br>
+                ✉️ gzo05@hotmail.com
+            </p>
+        </div>
+
+    </div>
+
+    <div class="copy">
+        © 2026 LA LICORERÍA DUITAMA
+    </div>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a class="whatsapp-float"
+href="https://wa.me/573105832128"
+target="_blank">
+☎
+</a>
+
+</body>
+</html>
