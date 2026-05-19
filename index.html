@@ -785,18 +785,24 @@ href="https://wa.me/573105832128"
 target="_blank">
 ☎
 </a>
-<a class="whatsapp-float" href="https://wa.me/573105832128" target="_blank">☎</a>
-
-    <style>
-    @media (max-width: 768px) {
-        .nav-links { display: none !important; }
-        .hero h1 { font-size: 3rem !important; }
-        .cards, .experience-grid, .galeria-grid, .footer-grid, form { grid-template-columns: 1fr !important; gap: 20px !important; }
-        .hero-buttons { flex-direction: column !important; gap: 10px !important; }
-        .hero-buttons a { width: 90% !important; margin: 0 auto !important; }
-        .form-box { padding: 20px !important; }
-        input, select, button { width: 100% !important; }
+<style>
+/* RESPONSIVE AGREGADO AL FINAL */
+@media (max-width: 768px) {
+    .nav-links { display: none !important; }
+    .hero h1 { font-size: 3rem !important; }
+    
+    /* Arreglo específico para el título de Reservaciones */
+    .form-box h2 { font-size: 2rem !important; margin-bottom: 20px !important; }
+    
+    .cards, .experience-grid, .galeria-grid, .footer-grid, form { 
+        grid-template-columns: 1fr !important; 
+        gap: 20px !important; 
     }
-    </style>
+    .hero-buttons { flex-direction: column !important; gap: 10px !important; }
+    .hero-buttons a { width: 90% !important; margin: 0 auto !important; }
+    .form-box { padding: 20px !important; }
+    input, select, button { width: 100% !important; }
+}
+</style>
 </body>
 </html>
